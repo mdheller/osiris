@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "0.1.0",
+  "sourceRecordId": "gaia-src-facility-risk-fire-weather-alert",
+  "sourceName": "Synthetic Fire Weather Feed",
+  "sourceFamily": "synthetic_fixture",
+  "routeFamily": "fixture/orion/facility-risk",
+  "sourceUrl": "fixture://orion/facility-risk/fire-weather-alert",
+  "observedAt": "2026-05-29T12:00:00Z",
+  "ingestedAt": "2026-05-29T12:01:00Z",
+  "licenseStatus": "approved_for_fixture",
+  "attributionRequired": false,
+  "commercialUseStatus": "allowed",
+  "evidenceGrade": "fixture.synthetic",
+  "riskClass": "low",
+  "provenance": {
+    "retrievalMode": "fixture",
+    "hashAlgorithm": "none",
+    "canonicalizationStatus": "not_applicable",
+    "retrievalNotes": "Synthetic fire-weather alert for Orion OSIRIS excavation MVP."
+  },
+  "confidenceContribution": 0.7,
+  "notes": "Represents the natural-hazard leg of the facility-risk scenario."
+}
