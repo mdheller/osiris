@@ -1,0 +1,21 @@
+{
+  "schemaVersion": "0.1.0",
+  "receiptId": "orion-rcpt-facility-risk-demo",
+  "receiptType": "synthetic_demo",
+  "createdAt": "2026-05-29T12:09:00Z",
+  "eventRef": "orion-evt-facility-risk-fused-incident",
+  "sourceRecordRefs": [
+    "gaia-src-facility-risk-fire-weather-alert",
+    "gaia-src-facility-risk-facility-asset",
+    "gaia-src-facility-risk-cve-exposure",
+    "gaia-src-facility-risk-field-report"
+  ],
+  "policyEnvelopeRef": "orion-pol-facility-risk-demo",
+  "decisionCardRef": "orion-card-facility-risk-demo",
+  "mode": "fixture",
+  "hashes": {
+    "hashAlgorithm": "none"
+  },
+  "operatorVisibleSummary": "Synthetic facility-risk incident rendered with four source records, action-gated policy, and emitted demo receipt.",
+  "notes": "Receipt fixture proves the target chain from Gaia source records through Orion event, policy envelope, decision card, and map receipt."
+}
