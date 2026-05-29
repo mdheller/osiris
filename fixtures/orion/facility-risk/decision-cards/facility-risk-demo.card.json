@@ -1,0 +1,45 @@
+{
+  "schemaVersion": "0.1.0",
+  "decisionCardId": "orion-card-facility-risk-demo",
+  "eventRef": "orion-evt-facility-risk-fused-incident",
+  "title": "Fused facility-risk incident",
+  "whatHappened": "A synthetic facility asset is exposed to an elevated fire-weather corridor while a passive cyber exposure and operator field report increase operational concern.",
+  "whyWeBelieveIt": [
+    "The hazard fixture places a high-severity fire-weather alert near the facility corridor.",
+    "The asset fixture identifies a critical facility inside the affected area.",
+    "The cyber fixture records a passive CVE exposure against the facility vendor stack.",
+    "The field report fixture independently reports visible smoke, impaired access, and degraded local communications."
+  ],
+  "affectedAssets": ["asset.synthetic-facility-alpha"],
+  "operationalRisk": "Critical synthetic demo risk: continuity, access, and cyber resilience should be reviewed, but active scanning or external action is not authorized in fixture mode.",
+  "allowedActions": [
+    "View fused incident on map",
+    "Inspect source records",
+    "Inspect policy envelope",
+    "Notify demo workspace stakeholders"
+  ],
+  "gatedActions": [
+    {
+      "action": "Run live scanner against facility infrastructure",
+      "requiredGate": "engagement_policy_required"
+    },
+    {
+      "action": "Export incident as production evidence",
+      "requiredGate": "human_review_required"
+    },
+    {
+      "action": "Execute operational mitigation",
+      "requiredGate": "authorization_required"
+    }
+  ],
+  "sourceRecordRefs": [
+    "gaia-src-facility-risk-fire-weather-alert",
+    "gaia-src-facility-risk-facility-asset",
+    "gaia-src-facility-risk-cve-exposure",
+    "gaia-src-facility-risk-field-report"
+  ],
+  "policyEnvelopeRef": "orion-pol-facility-risk-demo",
+  "receiptState": "emitted.synthetic",
+  "receiptRef": "orion-rcpt-facility-risk-demo",
+  "notes": "First Orion decision-card fixture for OSIRIS excavation."
+}
