@@ -1,0 +1,27 @@
+{
+  "schemaVersion": "0.1.0",
+  "fusionLinkId": "orion-fuse-facility-risk-demo",
+  "fusedEventRef": "orion-evt-facility-risk-fused-incident",
+  "inputEventRefs": [
+    "orion-evt-facility-risk-fire-weather-alert",
+    "orion-evt-facility-risk-facility-asset",
+    "orion-evt-facility-risk-cve-exposure",
+    "orion-evt-facility-risk-field-report"
+  ],
+  "sourceRecordRefs": [
+    "gaia-src-facility-risk-fire-weather-alert",
+    "gaia-src-facility-risk-facility-asset",
+    "gaia-src-facility-risk-cve-exposure",
+    "gaia-src-facility-risk-field-report"
+  ],
+  "fusionMethod": "fixture.synthetic_rule",
+  "confidence": 0.78,
+  "rationale": [
+    "The facility asset lies inside the synthetic hazard corridor.",
+    "A cyber exposure affects the same synthetic facility asset.",
+    "The operator field report supplies independent local disruption context.",
+    "The fused event remains action-gated because cyber enrichment does not authorize scanning or operational action."
+  ],
+  "createdAt": "2026-05-29T12:08:00Z",
+  "notes": "Synthetic fusion record proving the Orion event seam over the OSIRIS map body."
+}
