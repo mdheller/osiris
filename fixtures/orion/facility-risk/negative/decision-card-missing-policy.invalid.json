@@ -1,0 +1,18 @@
+{
+  "schemaVersion": "0.1.0",
+  "decisionCardId": "orion-card-negative-missing-policy",
+  "eventRef": "orion-evt-facility-risk-fused-incident",
+  "title": "Invalid decision card with missing policy envelope",
+  "whatHappened": "NEGATIVE FIXTURE: this object is intentionally invalid because every Orion decision card must point to a policy envelope.",
+  "whyWeBelieveIt": [
+    "This fixture exists only to prove validator rejection."
+  ],
+  "affectedAssets": ["asset.synthetic-facility-alpha"],
+  "allowedActions": ["View fused incident on map"],
+  "gatedActions": [],
+  "sourceRecordRefs": [
+    "gaia-src-facility-risk-fire-weather-alert"
+  ],
+  "policyEnvelopeRef": "orion-pol-does-not-exist",
+  "receiptState": "none"
+}
