@@ -1,0 +1,34 @@
+{
+  "schemaVersion": "0.1.0",
+  "eventId": "orion-evt-facility-risk-fused-incident",
+  "eventType": "incident.fused_facility_risk",
+  "title": "Fused facility-risk incident",
+  "summary": "Synthetic fusion object combining fire-weather conditions, facility asset exposure, cyber exposure, and operator field report into one governed operational incident.",
+  "observedAt": "2026-05-29T12:08:00Z",
+  "validUntil": "2026-05-29T15:00:00Z",
+  "location": {
+    "type": "Point",
+    "coordinates": [-121.4980, 38.5800]
+  },
+  "severity": "critical",
+  "confidence": 0.78,
+  "sourceRecordRefs": [
+    "gaia-src-facility-risk-fire-weather-alert",
+    "gaia-src-facility-risk-facility-asset",
+    "gaia-src-facility-risk-cve-exposure",
+    "gaia-src-facility-risk-field-report"
+  ],
+  "assetRefs": ["asset.synthetic-facility-alpha"],
+  "relatedEventRefs": [
+    "orion-evt-facility-risk-fire-weather-alert",
+    "orion-evt-facility-risk-facility-asset",
+    "orion-evt-facility-risk-cve-exposure",
+    "orion-evt-facility-risk-field-report"
+  ],
+  "evidenceGrade": "fused.inferred",
+  "policyState": "action_gated",
+  "policyEnvelopeRef": "orion-pol-facility-risk-demo",
+  "decisionCardRef": "orion-card-facility-risk-demo",
+  "receiptRef": "orion-rcpt-facility-risk-demo",
+  "tags": ["facility-risk", "fused-incident", "fixture", "orion-demo"]
+}
