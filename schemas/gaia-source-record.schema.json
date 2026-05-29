@@ -1,0 +1,148 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.dev/schemas/gaia-source-record.schema.json",
+  "title": "GaiaSourceRecord",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "sourceRecordId",
+    "sourceName",
+    "sourceFamily",
+    "observedAt",
+    "ingestedAt",
+    "evidenceGrade",
+    "riskClass",
+    "provenance"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "sourceRecordId": {
+      "type": "string",
+      "pattern": "^gaia-src-[a-z0-9][a-z0-9._-]*$"
+    },
+    "sourceName": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceFamily": {
+      "type": "string",
+      "enum": [
+        "aviation",
+        "maritime",
+        "cctv",
+        "seismic",
+        "fire",
+        "weather",
+        "space",
+        "cyber",
+        "news",
+        "conflict",
+        "crypto",
+        "sanctions",
+        "telegram_public_preview",
+        "facility_asset",
+        "field_report",
+        "synthetic_fixture",
+        "unknown"
+      ]
+    },
+    "routeFamily": {
+      "type": "string",
+      "minLength": 1
+    },
+    "sourceUrl": {
+      "type": "string"
+    },
+    "observedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "ingestedAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "licenseStatus": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "review_required",
+        "public_api_terms_required",
+        "attribution_required",
+        "approved_for_fixture",
+        "approved_for_live_demo",
+        "approved_for_production",
+        "not_approved"
+      ],
+      "default": "unknown"
+    },
+    "attributionRequired": {
+      "type": "boolean",
+      "default": false
+    },
+    "commercialUseStatus": {
+      "type": "string",
+      "enum": [
+        "unknown",
+        "review_required",
+        "allowed",
+        "restricted",
+        "not_allowed"
+      ],
+      "default": "unknown"
+    },
+    "evidenceGrade": {
+      "type": "string",
+      "enum": [
+        "fixture.synthetic",
+        "public_source.unverified",
+        "public_source.versioned",
+        "public_source.attributed",
+        "operator_report.unverified",
+        "fused.inferred",
+        "policy_gated.action"
+      ]
+    },
+    "riskClass": {
+      "type": "string",
+      "enum": ["low", "medium", "high", "unknown"]
+    },
+    "provenance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["retrievalMode", "canonicalizationStatus"],
+      "properties": {
+        "retrievalMode": {
+          "type": "string",
+          "enum": ["fixture", "public_feed", "manual_entry", "internal_feed", "action_result", "unknown"]
+        },
+        "contentHash": {
+          "type": "string"
+        },
+        "hashAlgorithm": {
+          "type": "string",
+          "enum": ["sha256", "sha512", "none", "unknown"],
+          "default": "unknown"
+        },
+        "canonicalizationStatus": {
+          "type": "string",
+          "enum": ["not_canonicalized", "canonicalized", "not_applicable", "unknown"]
+        },
+        "retrievalNotes": {
+          "type": "string"
+        }
+      }
+    },
+    "confidenceContribution": {
+      "type": "number",
+      "minimum": 0,
+      "maximum": 1
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
