@@ -1,0 +1,76 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.dev/schemas/orion-policy-envelope.schema.json",
+  "title": "OrionPolicyEnvelope",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "policyEnvelopeId",
+    "policyState",
+    "permissions",
+    "scope",
+    "receiptRequired"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "policyEnvelopeId": {
+      "type": "string",
+      "pattern": "^orion-pol-[a-z0-9][a-z0-9._-]*$"
+    },
+    "policyState": {
+      "type": "string",
+      "enum": [
+        "public_view_allowed",
+        "internal_view_allowed",
+        "unverified_source",
+        "attribution_required",
+        "action_gated",
+        "scope_required",
+        "authorization_required",
+        "expired"
+      ]
+    },
+    "permissions": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["view", "enrich", "export", "scan", "notify", "act"],
+      "properties": {
+        "view": { "type": "boolean" },
+        "enrich": { "type": "boolean" },
+        "export": { "type": "boolean" },
+        "scan": { "type": "boolean" },
+        "notify": { "type": "boolean" },
+        "act": { "type": "boolean" }
+      }
+    },
+    "scope": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["mode"],
+      "properties": {
+        "mode": {
+          "type": "string",
+          "enum": ["fixture", "public_demo", "internal_workspace", "engagement_authorized", "unknown"]
+        },
+        "workspaceRef": { "type": "string" },
+        "engagementRef": { "type": "string" },
+        "authorizationRef": { "type": "string" },
+        "targetScopeRef": { "type": "string" }
+      }
+    },
+    "receiptRequired": {
+      "type": "boolean"
+    },
+    "expiresAt": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
