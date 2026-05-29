@@ -1,0 +1,23 @@
+{
+  "schemaVersion": "0.1.0",
+  "sourceRecordId": "gaia-src-facility-risk-facility-asset",
+  "sourceName": "Synthetic Facility Asset Registry",
+  "sourceFamily": "facility_asset",
+  "routeFamily": "fixture/orion/facility-risk",
+  "sourceUrl": "fixture://orion/facility-risk/facility-asset",
+  "observedAt": "2026-05-29T11:55:00Z",
+  "ingestedAt": "2026-05-29T12:01:00Z",
+  "licenseStatus": "approved_for_fixture",
+  "attributionRequired": false,
+  "commercialUseStatus": "allowed",
+  "evidenceGrade": "fixture.synthetic",
+  "riskClass": "low",
+  "provenance": {
+    "retrievalMode": "fixture",
+    "hashAlgorithm": "none",
+    "canonicalizationStatus": "not_applicable",
+    "retrievalNotes": "Synthetic facility asset record for Orion OSIRIS excavation MVP."
+  },
+  "confidenceContribution": 0.9,
+  "notes": "Represents the asset leg of the facility-risk scenario."
+}
