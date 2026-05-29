@@ -1,0 +1,111 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.dev/schemas/orion-decision-card.schema.json",
+  "title": "OrionDecisionCard",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "decisionCardId",
+    "eventRef",
+    "title",
+    "whatHappened",
+    "whyWeBelieveIt",
+    "affectedAssets",
+    "allowedActions",
+    "gatedActions",
+    "sourceRecordRefs",
+    "policyEnvelopeRef",
+    "receiptState"
+  ],
+  "properties": {
+    "schemaVersion": {
+      "type": "string",
+      "const": "0.1.0"
+    },
+    "decisionCardId": {
+      "type": "string",
+      "pattern": "^orion-card-[a-z0-9][a-z0-9._-]*$"
+    },
+    "eventRef": {
+      "type": "string",
+      "pattern": "^orion-evt-[a-z0-9][a-z0-9._-]*$"
+    },
+    "title": {
+      "type": "string",
+      "minLength": 1
+    },
+    "whatHappened": {
+      "type": "string",
+      "minLength": 1
+    },
+    "whyWeBelieveIt": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "affectedAssets": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "operationalRisk": {
+      "type": "string"
+    },
+    "allowedActions": {
+      "type": "array",
+      "items": { "type": "string" },
+      "uniqueItems": true
+    },
+    "gatedActions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "additionalProperties": false,
+        "required": ["action", "requiredGate"],
+        "properties": {
+          "action": { "type": "string" },
+          "requiredGate": {
+            "type": "string",
+            "enum": [
+              "scope_required",
+              "authorization_required",
+              "engagement_policy_required",
+              "attribution_required",
+              "human_review_required"
+            ]
+          }
+        }
+      }
+    },
+    "sourceRecordRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^gaia-src-[a-z0-9][a-z0-9._-]*$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "policyEnvelopeRef": {
+      "type": "string",
+      "pattern": "^orion-pol-[a-z0-9][a-z0-9._-]*$"
+    },
+    "receiptState": {
+      "type": "string",
+      "enum": [
+        "none",
+        "render_receipt_ready",
+        "decision_receipt_ready",
+        "emitted.synthetic",
+        "emitted.live"
+      ]
+    },
+    "receiptRef": {
+      "type": "string"
+    },
+    "notes": {
+      "type": "string"
+    }
+  }
+}
