@@ -1,0 +1,19 @@
+{
+  "schemaVersion": "0.1.0",
+  "eventId": "orion-evt-facility-risk-facility-asset",
+  "eventType": "asset.facility",
+  "title": "Critical facility asset in hazard corridor",
+  "summary": "Synthetic facility asset used to demonstrate Gaia/Orion event fusion and map projection.",
+  "observedAt": "2026-05-29T11:55:00Z",
+  "location": {
+    "type": "Point",
+    "coordinates": [-121.5000, 38.5800]
+  },
+  "severity": "medium",
+  "confidence": 0.9,
+  "sourceRecordRefs": ["gaia-src-facility-risk-facility-asset"],
+  "assetRefs": ["asset.synthetic-facility-alpha"],
+  "evidenceGrade": "fixture.synthetic",
+  "policyState": "internal_view_allowed",
+  "tags": ["facility-risk", "asset", "fixture"]
+}
