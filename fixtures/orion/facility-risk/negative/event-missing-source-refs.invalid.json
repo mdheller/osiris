@@ -1,0 +1,17 @@
+{
+  "schemaVersion": "0.1.0",
+  "eventId": "orion-evt-negative-missing-source-refs",
+  "eventType": "incident.fused_facility_risk",
+  "title": "Invalid event with no source references",
+  "summary": "NEGATIVE FIXTURE: this object is intentionally invalid because governed Orion events must reference at least one Gaia source record.",
+  "observedAt": "2026-05-29T12:10:00Z",
+  "location": {
+    "type": "Point",
+    "coordinates": [-121.4980, 38.5800]
+  },
+  "severity": "high",
+  "confidence": 0.5,
+  "sourceRecordRefs": [],
+  "evidenceGrade": "fused.inferred",
+  "policyState": "action_gated"
+}
