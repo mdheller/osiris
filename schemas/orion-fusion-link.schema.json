@@ -1,0 +1,65 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://socioprophet.dev/schemas/orion-fusion-link.schema.json",
+  "title": "OrionFusionLink",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schemaVersion",
+    "fusionLinkId",
+    "fusedEventRef",
+    "inputEventRefs",
+    "sourceRecordRefs",
+    "fusionMethod",
+    "confidence",
+    "rationale"
+  ],
+  "properties": {
+    "schemaVersion": { "type": "string", "const": "0.1.0" },
+    "fusionLinkId": {
+      "type": "string",
+      "pattern": "^orion-fuse-[a-z0-9][a-z0-9._-]*$"
+    },
+    "fusedEventRef": {
+      "type": "string",
+      "pattern": "^orion-evt-[a-z0-9][a-z0-9._-]*$"
+    },
+    "inputEventRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^orion-evt-[a-z0-9][a-z0-9._-]*$"
+      },
+      "minItems": 2,
+      "uniqueItems": true
+    },
+    "sourceRecordRefs": {
+      "type": "array",
+      "items": {
+        "type": "string",
+        "pattern": "^gaia-src-[a-z0-9][a-z0-9._-]*$"
+      },
+      "minItems": 1,
+      "uniqueItems": true
+    },
+    "fusionMethod": {
+      "type": "string",
+      "enum": [
+        "fixture.synthetic_rule",
+        "geospatial_temporal_correlation",
+        "asset_event_correlation",
+        "operator_confirmed_correlation",
+        "model_inferred",
+        "unknown"
+      ]
+    },
+    "confidence": { "type": "number", "minimum": 0, "maximum": 1 },
+    "rationale": {
+      "type": "array",
+      "items": { "type": "string", "minLength": 1 },
+      "minItems": 1
+    },
+    "createdAt": { "type": "string", "format": "date-time" },
+    "notes": { "type": "string" }
+  }
+}
