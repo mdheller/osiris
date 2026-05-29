@@ -1,0 +1,20 @@
+{
+  "schemaVersion": "0.1.0",
+  "policyEnvelopeId": "orion-pol-facility-risk-demo",
+  "policyState": "action_gated",
+  "permissions": {
+    "view": true,
+    "enrich": true,
+    "export": false,
+    "scan": false,
+    "notify": true,
+    "act": false
+  },
+  "scope": {
+    "mode": "fixture",
+    "workspaceRef": "workspace.synthetic-orion-demo"
+  },
+  "receiptRequired": true,
+  "expiresAt": "2026-05-29T15:00:00Z",
+  "notes": "Synthetic demo policy. Passive viewing and enrichment are allowed. Active scan/action remain disabled pending SCOPE-D engagement authorization."
+}
